@@ -1,0 +1,36 @@
+{
+  "name": "pulsar-ws",
+  "version": "1.0.0",
+  "description": "Apache Pulsar node.js client over WebSocket",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roackb2/pulsar-ws.git"
+  },
+  "author": "Jay Liang <roackb2@gmail.com> (https://www.facebook.com/profile.php?id=1391931108)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roackb2/pulsar-ws/issues"
+  },
+  "homepage": "https://github.com/roackb2/pulsar-ws#readme",
+  "dependencies": {
+    "winston": "^3.2.1",
+    "ws": "^7.2.0"
+  },
+  "keywords": [
+    "Apache Pulsar",
+    "Pulsar",
+    "Apache Pulsar WebSocket",
+    "Pulsar WebSocket",
+    "WebSocket",
+    "PubSub",
+    "Pub/Sub"
+  ]
+}
