@@ -13,7 +13,8 @@ const producer = new Producer({
     tenant: "my-tenant",
     cluster: "us-east-1",
     namespace: "my-namespace",
-    topic: "my-topic"
+    topic: "my-topic",
+    reconnect: true,
 }, logger)
 
 producer.start(() => {

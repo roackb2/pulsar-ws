@@ -14,7 +14,8 @@ const consumer = new Consumer({
     cluster: "us-east-1",
     namespace: "my-namespace",
     topic: "my-topic",
-    subscription: "sub-1"
+    subscription: "sub-1",
+    reconnect: true,
 }, logger)
 
 consumer.listen(message => {
