@@ -25,10 +25,12 @@ const producer = new Producer({
     persistent: true,
     host: "localhost",
     port: 8080,
+    secure: false,
     tenant: "my-tenant",
     cluster: "us-east-1",
     namespace: "my-namespace",
     topic: "my-topic",
+    token: "[JWT auth token]",
     reconnect: true,
     params: {
         maxPendingMessages: 65535

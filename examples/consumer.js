@@ -26,11 +26,13 @@ const consumer = new Consumer({
     persistent: true,
     host: "localhost",
     port: 8080,
+    secure: false,
     tenant: "my-tenant",
     cluster: "us-east-1",
     namespace: "my-namespace",
     topic: "my-topic",
     subscription: "sub-1",
+    token: "[JWT auth token]",
     reconnect: true,
     params: {
         receiverQueueSize: 65535
