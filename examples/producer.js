@@ -7,6 +7,19 @@ const logger = createLogger({
     transports: [new transports.Console()]
 });
 
+// example opts
+// {
+//     host: "localhost",
+//     port: 8080,
+//     tenant: "my-tenant",
+//     cluster: "us-east-1",
+//     namespace: "my-ns",
+//     topic: "my-topic",
+//     reconnect: true,
+//     params: {
+//         ...other Producer endpoint query params
+//     }
+// }
 const producer = new Producer({
     host: "localhost",
     port: 8080,
@@ -15,6 +28,9 @@ const producer = new Producer({
     namespace: "my-namespace",
     topic: "my-topic",
     reconnect: true,
+    params: {
+        maxPendingMessages: 65535
+    }
 }, logger)
 
 producer.start(() => {

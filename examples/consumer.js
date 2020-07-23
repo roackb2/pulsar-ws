@@ -7,6 +7,20 @@ const logger = createLogger({
     transports: [new transports.Console()]
 });
 
+// example opts
+// {
+//     host: "localhost",
+//     port: 8080,
+//     tenant: "my-tenant",
+//     cluster: "us-east-1",
+//     namespace: "my-ns",
+//     topic: "my-topic"
+//     subscription: "1",
+//     reconnect: true,
+//     params: {
+//         ...other Consumer endpoint query params
+//     }
+// }
 const consumer = new Consumer({
     host: "localhost",
     port: 8080,
@@ -16,6 +30,9 @@ const consumer = new Consumer({
     topic: "my-topic",
     subscription: "sub-1",
     reconnect: true,
+    params: {
+        receiverQueueSize: 65535
+    }
 }, logger)
 
 consumer.listen(message => {
