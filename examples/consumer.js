@@ -9,6 +9,7 @@ const logger = createLogger({
 
 // example opts
 // {
+//     persistent: true,
 //     host: "localhost",
 //     port: 8080,
 //     tenant: "my-tenant",
@@ -22,6 +23,7 @@ const logger = createLogger({
 //     }
 // }
 const consumer = new Consumer({
+    persistent: true,
     host: "localhost",
     port: 8080,
     tenant: "my-tenant",
