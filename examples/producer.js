@@ -10,28 +10,28 @@ const logger = createLogger({
 // example opts
 // {
 //     persistent: true,
+//     reconnect: true,
 //     host: "localhost",
 //     port: 8080,
+//     secure: false,
 //     tenant: "my-tenant",
-//     cluster: "us-east-1",
 //     namespace: "my-ns",
 //     topic: "my-topic",
-//     reconnect: true,
+//     token: "JWT token", // optional, only supports JWT token authentication and authorization for now
 //     params: {
 //         ...other Producer endpoint query params
 //     }
 // }
 const producer = new Producer({
     persistent: true,
+    reconnect: true,
     host: "localhost",
     port: 8080,
     secure: false,
     tenant: "my-tenant",
-    cluster: "us-east-1",
-    namespace: "my-namespace",
+    namespace: "my-ns",
     topic: "my-topic",
-    token: "[JWT auth token]",
-    reconnect: true,
+    token: "JWT token", // optional, only supports JWT token authentication and authorization for now
     params: {
         maxPendingMessages: 65535
     }

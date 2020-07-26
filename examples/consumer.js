@@ -10,30 +10,30 @@ const logger = createLogger({
 // example opts
 // {
 //     persistent: true,
+//     reconnect: true,
 //     host: "localhost",
 //     port: 8080,
+//     secure: false,
 //     tenant: "my-tenant",
-//     cluster: "us-east-1",
 //     namespace: "my-ns",
-//     topic: "my-topic"
+//     topic: "my-topic",
 //     subscription: "1",
-//     reconnect: true,
+//     token: "JWT token", // optional, only supports JWT token authentication and authorization for now
 //     params: {
 //         ...other Consumer endpoint query params
 //     }
 // }
 const consumer = new Consumer({
     persistent: true,
+    reconnect: true,
     host: "localhost",
     port: 8080,
     secure: false,
     tenant: "my-tenant",
-    cluster: "us-east-1",
-    namespace: "my-namespace",
+    namespace: "my-ns",
     topic: "my-topic",
-    subscription: "sub-1",
-    token: "[JWT auth token]",
-    reconnect: true,
+    subscription: "1",
+    token: "JWT token", // optional, only supports JWT token authentication and authorization for now
     params: {
         receiverQueueSize: 65535
     }
