@@ -18,6 +18,4 @@ Since npm ws module allows custom header on WebSocket request, it is possible to
 But you might need to set environment variables as following:
 ```
 export NODE_EXTRA_CA_CERTS=[Your CA cert path];
-export NODE_TLS_REJECT_UNAUTHORIZED=0;
 ```
-This disable TLS authorization so it's unsafe, so use in production on your own risk.
