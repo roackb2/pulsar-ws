@@ -37,13 +37,36 @@ const producer = new Producer({
     }
 }, logger)
 
-producer.start(() => {
-    var message = {
-        "payload" : Buffer.from("Hello World!").toString('hex'), // Pulsar requires payload to be hex or base64 encoding
+// Creates a message that Pulsar WebSocket could accept
+function createMessage(msg) {
+    return {
+        "payload" : Buffer.from(msg).toString('base64'), // Pulsar requires payload to be hex or base64 encoding
         "properties": {
             "key1" : "value1",
         },
         "context" : "1"
     };
-    producer.send(message);
-});
+}
+
+async function run() {
+    await producer.start();
+    console.log("producer started")
+    // send a hellow world message
+    let msg = createMessage("Hello World!")
+    let res = await producer.send(msg);
+    // send an end message
+    msg = createMessage("end");
+    res = await producer.send(msg)
+    await producer.stop()
+    console.log("producer stopped")
+}
+
+async function main() {
+    try {
+        run()
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+main()
