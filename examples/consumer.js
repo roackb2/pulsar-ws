@@ -13,6 +13,7 @@ const { Consumer } = require('../index');
 //     topic: "my-topic",
 //     subscription: "1",
 //     token: "JWT token", // optional, only supports JWT token authentication and authorization for now
+//     useNative: false, // set to true if you want to use native WebSocket in browser
 //     params: {
 //         ...other Consumer endpoint query params
 //     }
