@@ -1,11 +1,5 @@
 'use strict';
 const { Producer } = require('../index');
-const { createLogger, format, transports } = require('winston');
-const logger = createLogger({
-    level: 'debug',
-    format: format.simple(),
-    transports: [new transports.Console()]
-});
 
 // example opts
 // {
@@ -35,7 +29,7 @@ const producer = new Producer({
     params: {
         maxPendingMessages: 65535
     }
-}, logger)
+}, console)
 
 // Creates a message that Pulsar WebSocket could accept
 function createMessage(msg) {

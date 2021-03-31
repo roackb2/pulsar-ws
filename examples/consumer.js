@@ -1,11 +1,5 @@
 'use strict';
 const { Consumer } = require('../index');
-const { createLogger, format, transports } = require('winston');
-const logger = createLogger({
-    level: 'debug',
-    format: format.simple(),
-    transports: [new transports.Console()]
-});
 
 // example opts
 // {
@@ -37,7 +31,7 @@ const consumer = new Consumer({
     params: {
         receiverQueueSize: 65535
     }
-}, logger)
+}, console)
 
 function handleMessage(message) {
     let payload = Buffer.from(message.payload, 'base64')
