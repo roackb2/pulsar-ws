@@ -1,6 +1,6 @@
 {
   "name": "pulsar-ws",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Apache Pulsar node.js client over WebSocket",
   "main": "index.js",
   "directories": {
